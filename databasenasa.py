@@ -1,36 +1,34 @@
 import requests
 
-# Substitua sua chave da API abaixo
+# Replace your API key below
 API_KEY = "8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv"
 
-# Endpoint da API do Mars Rover (exemplo de endpoint para imagens do rover Perseverance)
+# Mars Rover API endpoint (example endpoint for Perseverance rover images)
 url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=1000&api_key={API_KEY}"
 
-# Função para obter dados
-def obter_dados_mars_rover():
+# Function to get data
+def get_mars_rover_data():
     try:
-        # Enviar solicitação GET para o endpoint
+        # Send GET request to the endpoint
         response = requests.get(url)
         
-        # Verificar se a resposta foi bem-sucedida (código 200)
+        # Check if the response was successful (status code 200)
         if response.status_code == 200:
-            dados = response.json()
-            fotos = dados.get('photos', [])
+            data = response.json()
+            photos = data.get('photos', [])
             
-            if fotos:
-                print(f"Total de fotos encontradas: {len(fotos)}")
-                for foto in fotos[:5]:  # Exibe as primeiras 5 fotos
-                    print(f"Foto URL: {foto['img_src']}")
-                    print(f"Sol: {foto['sol']}")
-                    print(f"Data: {foto['earth_date']}")
+            if photos:
+                print(f"Total photos found: {len(photos)}")
+                for photo in photos[:5]:  # Display the first 5 photos
+                    print(f"Photo URL: {photo['img_src']}")
+                    print(f"Sol: {photo['sol']}")
+                    print(f"Date: {photo['earth_date']}")
                     print("-" * 30)
             else:
-                print("Nenhuma foto encontrada para o sol especificado.")
+                print("No photos found for the specified sol.")
         else:
-            print("Erro na solicitação. Código de status:", response.status_code)
+            print("Request error. Status code:", response.status_code)
     
     except Exception as e:
-        print("Erro ao fazer a requisição:", e)
+        print(f"An error occurred: {e}")
 
-# Chamar a função para buscar dados
-obter_dados_mars_rover()

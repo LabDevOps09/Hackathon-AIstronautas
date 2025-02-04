@@ -1,22 +1,22 @@
 import requests
 import json
 
-# Substitua pela sua chave de API pessoal
-api_key = '8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv'  # Use sua chave obtida no portal da NASA
+# Replace with your personal API key
+api_key = '8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv'  # Use your key obtained from the NASA portal
 
-# Defina a data de início e fim
+# Define the start and end dates
 start_date = '2023-02-01'
 end_date = '2023-02-02'
 
-# URL da API com os parâmetros de consulta
+# API URL with query parameters
 url = f'https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={api_key}'
 
-# Fazer a requisição GET
+# Make the GET request
 response = requests.get(url)
 
-# Se a requisição for bem-sucedida
+# If the request is successful
 if response.status_code == 200:
     data = response.json()
-    print(json.dumps(data, indent=4))  # Exibe os dados formatados em JSON
+    print(json.dumps(data, indent=4))  # Display the data formatted in JSON
 else:
-    print(f"Erro ao fazer a requisição: {response.status_code}")
+    print(f"Error making the request: {response.status_code}")

@@ -2,7 +2,7 @@ import requests
 import webbrowser
 
 # Configurações da API
-API_KEY = "8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv"   # Substitua com sua chave API da NASA
+API_KEY = "8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv"  # Substitua com sua chave API da NASA
 URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"  # URL para as fotos do Mars Rover
 
 # Parâmetros da requisição
@@ -31,3 +31,4 @@ try:
 
 except requests.RequestException as e:
     print(f"Erro ao buscar dados: {e}")
+

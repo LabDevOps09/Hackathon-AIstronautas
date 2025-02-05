@@ -1,0 +1,14 @@
+{
+    "photos": [
+        {
+            "id": 1,
+            "sol": 1000,
+            "camera": {
+                "name": "FHAZ"
+            },
+            "img_src": "http://mars.nasa.gov/images/photo1.jpg",
+            "earth_date": "2024-02-04"
+        },
+        ...
+    ]
+}

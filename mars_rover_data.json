@@ -1,10 +1,15 @@
 import requests
 import json
+import os
 
 # Function to store data in JSON
 def store_data_json(data, file_name="mars_rover_data.json"):
-    with open(file_name, "w") as f:
-        json.dump(data, f, indent=4)
+    try:
+        with open(file_name, "w") as f:
+            json.dump(data, f, indent=4)
+        print(f"Data has been successfully stored in {file_name}")
+    except Exception as e:
+        print(f"Error while storing data in {file_name}: {e}")
 
 # API Settings
 API_KEY = "8HALnlv0Gc2ZyMFDLQmwYKFlTieI3pWmS3RmUDRv"   # Replace with your NASA API key
@@ -23,6 +28,8 @@ try:
 
     # Process the response data
     data = response.json()  # Convert the JSON to a dictionary
+    
+    # Check if 'photos' key is in the response data
     photos = data.get("photos", [])  # Access the list of photos
 
     if photos:
@@ -32,10 +39,12 @@ try:
         
         # Store the data in the JSON file
         store_data_json(data)
-        print(f"Data has been stored in the file 'mars_rover_data.json'")
-
     else:
         print("No photos available for this date.")
 
 except requests.RequestException as e:
     print(f"Error while fetching data: {e}")
+except json.JSONDecodeError:
+    print("Error while decoding the response JSON.")
+
+

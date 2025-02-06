@@ -133,9 +133,9 @@ Ensure your backend logic is well-documented and ready for integration.
 
 # Summary of What You'll Have by Day 6:
 
-[ x ] Day 1: Environment setup and research APIs.
+[x] Day 1: Environment setup and research APIs.
 
-[  ] Day 2: Space Researcher Agent – Collect and store space facts.
+[x] Day 2: Space Researcher Agent – Collect and store space facts.
 
 [  ] Day 3: Storytelling Agent – Generate sci-fi stories using space data.
 

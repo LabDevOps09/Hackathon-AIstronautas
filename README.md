@@ -1,4 +1,4 @@
-# Hackathon-AIstronautas - Projeto em equipe the goat
+# Hackathon-AIstronautas - The GOAT Team Project
 
 ![AI](https://github.com/user-attachments/assets/f87343c8-fd78-4e73-96cf-e436665da5e2)
 
@@ -122,4 +122,3 @@ This script will sequentially run the Space Researcher, Storytelling, Simulation
 ### Backend Flow:
 
 The output of one agent feeds into the input of the next agent, creating a seamless workflow.
-

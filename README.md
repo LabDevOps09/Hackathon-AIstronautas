@@ -109,7 +109,7 @@ The suggested visuals (image URLs) will be printed to the console.
 
 ## Integration
 
-To integrate all agents into a cohesive system:
+To integrate all agents into a cohesive system is all you need:
 
 ### Run the Main Script:
 
